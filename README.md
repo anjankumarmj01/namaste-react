@@ -36,3 +36,9 @@
       - Delivery Time
 - Footer
 */
+
+/*
+Routing is two types:
+Client side routing
+Server side routing
+*/

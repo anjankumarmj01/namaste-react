@@ -1,7 +1,6 @@
 import { CON_URL } from "../utils/constants";
 
 export const RestaurantCard = ({ resData }) => {
-    console.log(resData);
   const { name, cuisines, avgRating, costForTwo, slaString } = resData?.info;
   return (
     <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
