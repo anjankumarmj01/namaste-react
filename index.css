@@ -69,3 +69,8 @@
 .filter {
     display: flex;
 }
+
+.user {
+    padding: 10px;
+    border: 1px solid black;
+}

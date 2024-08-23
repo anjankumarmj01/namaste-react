@@ -1,32 +1,27 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import { RESTAURANT_API } from "../utils/constants";
+import useRestaurants from "../utils/useRestaurants";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
-  const [listOfRestaurants, setListOfRestaurants] = useState([]);
-  const [filteredListOfRestaurants, setFilteredListOfRestaurants] = useState(
-    []
-  );
   const [searchValue, setSearchValue] = useState("");
+  const {
+    listOfRestaurants,
+    filteredListOfRestaurants,
+    setFilteredListOfRestaurants,
+  } = useRestaurants();
+  const onlineStatus = useOnlineStatus();
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const data = await fetch(RESTAURANT_API);
-    const json = await data.json();
-    setListOfRestaurants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+  if (onlineStatus === false)
+    return (
+      <h1>
+        Seems like you are offline! Please check your internet connection
+      </h1>
     );
-    setFilteredListOfRestaurants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
 
-  return listOfRestaurants.length === 0 ? (
+  return listOfRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
@@ -63,8 +58,11 @@ const Body = () => {
         </button>
       </div>
       <div className="rest-container">
-        {filteredListOfRestaurants.map((restaurant) => (
-          <Link key={restaurant?.info?.id} to={"/Restaurant/" + restaurant?.info?.id}>
+        {filteredListOfRestaurants?.map((restaurant) => (
+          <Link
+            key={restaurant?.info?.id}
+            to={"/Restaurant/" + restaurant?.info?.id}
+          >
             <RestaurantCard resData={restaurant} />
           </Link>
         ))}
