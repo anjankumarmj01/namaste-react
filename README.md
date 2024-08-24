@@ -42,3 +42,12 @@ Routing is two types:
 Client side routing
 Server side routing
 */
+
+
+/*
+Chunking
+lazy loading
+code splitting
+dynamic loading
+on demand loading
+*/
