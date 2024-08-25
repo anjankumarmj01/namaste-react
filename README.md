@@ -51,3 +51,13 @@ code splitting
 dynamic loading
 on demand loading
 */
+
+/* Styling
+SCSS and SASS
+Material UI
+Bootstrap
+Chakra UI
+Ant Design
+Styled Components
+Tailwind CSS
+*/

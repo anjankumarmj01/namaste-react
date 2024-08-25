@@ -1,5 +1,5 @@
 export const LOGO_URL =
-  "https://www.designevo.com/res/templates/thumb_small/location-takeaway-icon.webp";
+  "https://us.123rf.com/450wm/sejalanart/sejalanart2006/sejalanart200600572/149402840-fast-food-delivery-logo-vector-for-business-company-modern-delivery-service-logo-template-design.jpg";
 
 export const CON_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
