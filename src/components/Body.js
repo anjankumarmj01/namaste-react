@@ -16,8 +16,6 @@ const Body = () => {
   const RestaurantCardUnderThirtyMinsDelivery =
     withUnderThirtyMinsDelivery(RestaurantCard);
 
-  console.log("listOfRestaurants", listOfRestaurants);
-
   if (onlineStatus === false)
     return (
       <h1>Seems like you are offline! Please check your internet connection</h1>
